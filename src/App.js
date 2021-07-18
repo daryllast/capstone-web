@@ -8,6 +8,7 @@ function App() {
 
     const [categories, setCategories] = useState();
     const [selectedCategory, setSelectedCategory] = useState();
+    const [questions, setQuestions] = useState();
 
 
     const fetchCategories = async () => {
@@ -29,6 +30,7 @@ function App() {
         let res = await fetch(`http://localhost:3000/api/v1/categories/${category.id}/questions`)
         let data = await res.json()
         console.log(data)
+        setQuestions(data)
     };
 
     const switchCategory = async (category) => {
@@ -67,6 +69,16 @@ function App() {
 
             <div className={'col-span-12 border md:col-span-10 h-96 bg-gray-300'}>
                 <h1>Question/Answer Listing</h1>
+
+                <hr/>
+
+                <ul>
+                {questions && questions.map((question) =>  {
+                  return <li key={question.id}>
+                   {question.questionTxt}
+                  </li>
+                })}
+</ul>
 
             </div>
 
