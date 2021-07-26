@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+h1 {
+  font-family: 'Alfa Slab One', cursive;
+  text-shadow: 5px 5px 10px rgba(226, 219, 230, 20);
+
+}
+
+li, h2, .ant-collapse-header {
+
+  font-family: 'Noto Serif', serif;
+  font-weight: bolder;
+
+}
+
+textarea, Button, p {
+
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+
